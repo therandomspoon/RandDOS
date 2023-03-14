@@ -20,7 +20,7 @@
             const now = new Date();
             const metadata = { ip: data.ip, date: now.toISOString() };
             const metadataString = JSON.stringify(metadata);
-            localStorage.setItem('metadata', metadataString);
+            localStorage.setItem('metadata.txt', metadataString);
           })
           .catch(error => {
             console.error('Error getting IP address:', error);
