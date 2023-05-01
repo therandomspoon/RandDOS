@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Documentation Website</title>
+    <style>
+      /* Light mode styles */
+      body {
+        background-color: #f8f8f8;
+        color: #333;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        color: #555;
+      }
+      /* Dark mode styles */
+      body.dark {
+        background-color: #222;
+        color: #eee;
+      }
+      body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6 {
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#examples">Examples</a></li>
+        <li><a href="#api-reference">API Reference</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <button id="toggle-dark-mode">Toggle Dark Mode</button>
+    </nav>
+    <header>
+      <h1>My Documentation Website</h1>
+      <p>A comprehensive guide to using my awesome product.</p>
+    </header>
+    <main>
+      <section id="getting-started">
+        <h2>Getting Started</h2>
+        <p>Instructions for getting started with the product.</p>
+      </section>
+      <section id="features">
+        <h2>Features</h2>
+        <ul>
+          <li>DOS software and games at your fingertips</li>
+          <li>All in browser!</li>
+          <li>Coming soon more games not on DOS emulation like SM64 using chrome's WebGPU update </li>
+        </ul>
+      </section>
+      <section id="examples">
+        <h2>Examples of RandDOS</h2>
+        <p>This short promotional trailer helps demonstrate RandDOS capability: https://www.youtube.com/watch?v=ttBc8v4HM_s </p>
+      </section>
+      <section id="api-reference">
+        <h2>API Reference</h2>
+        <p>As mentioned before RandDOS uses a fork of someone else DOS file compiler. However most of the code was designed by Microsoft as well as the main DOS emulator being made by jsdos.com</p>
+      </section>
+      <section id="faq">
+        <h2>FAQ</h2>
+        <ul>
+          <li>Does RandDOS work on Iphone? Yes infact it was mainly developed with this intention.</li>
+          <li>How come your hosting off github? Github domains are least likely to be banned by organisations so it gives you a chance for some fun!</li>
+          <li>But my phone doesnt have a keyboard! how do i play? jsdos built into their emulator a on screen keyboard ui so it can be used on mobile devices</li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 My Company</p>
+    </footer>
+    <script>
+      const toggleButton = document.getElementById('toggle-dark-mode');
+      const body = document.body;
+
+      toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark');
+      });
+    </script>
+  </body>
+</html>
