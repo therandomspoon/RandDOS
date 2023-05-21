@@ -63,6 +63,7 @@ $size: 100vmin;
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  background: black; /* Set the background to black */
 }
 
 .wrapper {
@@ -84,28 +85,28 @@ $size: 100vmin;
   filter: blur(3vmin);
   animation: spin 3s infinite linear;
   mix-blend-mode: screen;
-  
-  @keyframes spin {
-    100% {transform: translate(-50%,-50%) rotate(360deg)}
-  }
-  
-  &__circle {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    left: 50%;
-    top: 50%;
-    filter: blur(10px);
-    background: rgba(0,0,0,.5);
-    transform: translate(-50%, -50%) scale(.25);
-    animation: black-hole__circle-expand 5s infinite linear reverse;
-  }
-  
-  @for $i from 2 through 10 {
-    &__circle:nth-child(#{$i}){
-      animation-delay: $i * -.5 + .5s;
-    }
+}
+
+@keyframes spin {
+  100% {transform: translate(-50%,-50%) rotate(360deg)}
+}
+
+.black-hole__circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  filter: blur(10px);
+  background: rgba(255, 255, 255, .5); /* Set the background to white */
+  transform: translate(-50%, -50%) scale(.25);
+  animation: black-hole__circle-expand 5s infinite linear reverse;
+}
+
+@for $i from 2 through 10 {
+  .black-hole__circle:nth-child(#{$i}){
+    animation-delay: $i * -.5 + .5s;
   }
 }
 
@@ -142,5 +143,6 @@ $size: 100vmin;
     transform: translate($val * 10 - 5vw, $i +vh)
   }
 }
+
 
 </style>
