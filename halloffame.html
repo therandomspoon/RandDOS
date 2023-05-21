@@ -48,3 +48,99 @@ border-radius:7px 7px 7px 7px ;
 <p style="color:#D4AF37;"> Kai_BizzBizz may be one of the most significant in this hall of fame and is responsible for the idea of our pokemon naming site. Kai_BizzBizz earned his place by being the first to complete the pokemon naming list and will forever be emboidied here </p>
 <p> </p>
 <p style="color:#D4AF37;"> Honourable quote: "I finna complete this" </p>
+%div.container
+  - (1..100).each do |i|
+    %div.trigger
+
+  %div.wrapper
+    %div.black-hole
+      - (1..10).each do |i|
+        %div.black-hole__circle
+<style>
+$size: 100vmin;
+
+.container {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: 2s cubic-bezier(.58,1.32,.7,1.43);
+  will-change: transform;
+  top: 50%;
+  left: 50%;
+}
+
+.black-hole {
+  width: $size;
+  height: $size;
+  position: absolute;
+  transform: translate(-50%,-50%) rotate(0deg);
+  top: 50%;
+  left: 50%;
+  filter: blur(3vmin);
+  animation: spin 3s infinite linear;
+  mix-blend-mode: screen;
+  
+  @keyframes spin {
+    100% {transform: translate(-50%,-50%) rotate(360deg)}
+  }
+  
+  &__circle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    filter: blur(10px);
+    background: rgba(0,0,0,.5);
+    transform: translate(-50%, -50%) scale(.25);
+    animation: black-hole__circle-expand 5s infinite linear reverse;
+  }
+  
+  @for $i from 2 through 10 {
+    &__circle:nth-child(#{$i}){
+      animation-delay: $i * -.5 + .5s;
+    }
+  }
+}
+
+@keyframes black-hole__circle-expand {
+  0% {
+    transform: translate(-20%, -50%) scale(0)
+  }
+  95% {
+    transform: translate(-50%, -50%) scale(1)
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+.trigger {
+  height: 10vh;
+  width: 10%;
+  box-sizing: border-box;
+  float: left;
+  position: relative;
+  z-index: 2;
+  transition: .25s;
+}
+
+@for $i from 1 through 100 {
+  .trigger:nth-of-type(#{$i}):hover ~ .wrapper {
+    $val: $i % 10;
+    @if $val == 0 {
+      $val: 10;
+    }
+    top: 0;
+    left: 0;
+    transform: translate($val * 10 - 5vw, $i +vh)
+  }
+}
+
+</style>
